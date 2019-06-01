@@ -30,26 +30,26 @@
             <p:menuitem value="Modificar Alumno" action="#{menuBean.editarAlumno()}" icon="pi pi-angle-double-right" />
         </p:submenu>
  
-        <p:submenu label="Imprimir" icon="pi pi-question">
-            <p:menuitem value="Carnet" url="#" />
-            <p:submenu label="Search" icon="pi pi-search">
-                <p:submenu label="Text">
-                    <p:menuitem value="Workspace" url="#" />
-                </p:submenu>
-                <p:menuitem value="File" url="#" />
-            </p:submenu>
+        <p:submenu label="Carnet" icon="pi pi-question">
+            <p:menuitem value="Imprimir Carnet" url="#" />
+
         </p:submenu>
  
         <p:submenu label="Reportes" icon="pi pi-cog">
-            <p:submenu label="Alumnos por carrera" icon="pi pi-refresh">
-                <p:menuitem value="Save" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
-                <p:menuitem value="Update" action="#{menuView.update}" icon="pi pi-refresh" update="messages"/>
+            <p:menuitem value="Alumnos por carrera" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
+            <p:submenu label="Non-Ajax" icon="pi pi-clone">
+                <p:menuitem value="Delete" action="#{menuView.delete}" icon="pi pi-times" update="messages" ajax="false"/>
+            </p:submenu>
+        </p:submenu>
+   <p:submenu label="Ayuda" icon="pi pi-cog">
+            <p:submenu label="Manuales" icon="pi pi-refresh">
+                <p:menuitem value="Manual de Administrador" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
+                <p:menuitem value="Manual de Usuario" action="#{menuView.update}" icon="pi pi-refresh" update="messages"/>
             </p:submenu>
             <p:submenu label="Non-Ajax" icon="pi pi-clone">
                 <p:menuitem value="Delete" action="#{menuView.delete}" icon="pi pi-times" update="messages" ajax="false"/>
             </p:submenu>
         </p:submenu>
- 
 
         <f:facet name="options">
 
