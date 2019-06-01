@@ -14,12 +14,20 @@
     <navigation-rule>
         <from-view-id>Menu.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>alumno</from-outcome>
-            <to-view-id>Alumno.xhtml</to-view-id>
+            <from-outcome>NuevoAlumno</from-outcome>
+            <to-view-id>NuevoAlumno.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>editarAlumno</from-outcome>
+            <from-outcome>EditarAlumno</from-outcome>
             <to-view-id>EditarAlumno.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>ImprimirCarnet</from-outcome>
+            <to-view-id>ImprimirCarnet.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>AlumnosCarrera</from-outcome>
+            <to-view-id>AlumnosCarrera.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     
