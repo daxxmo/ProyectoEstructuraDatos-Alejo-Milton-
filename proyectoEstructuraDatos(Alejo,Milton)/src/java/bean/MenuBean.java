@@ -58,16 +58,30 @@ public class MenuBean {
     }
  
 
-    public String alumno(){
-        return "alumno";
+    public String NuevoAlumno(){
+        return "NuevoAlumno";
     }
     
-    public String editarAlumno(){
-        return "editarAlumno";
+    public String EditarAlumno(){
+        return "EditarAlumno";
+    }
+    
+     public String ImprimirCarnet(){
+        return "ImprimirCarnet";
+    }
+      public String AlumnosCarrera(){
+        return "AlumnosCarrera";
+      }
+         public String AlumnosCiclo(){
+        return "AlumnosCiclo";
+    }
+              public String AlumnosInactivos(){
+        return "AlumnosInactivos";
+    }    
     }
  
 
  
 
-}
+
 

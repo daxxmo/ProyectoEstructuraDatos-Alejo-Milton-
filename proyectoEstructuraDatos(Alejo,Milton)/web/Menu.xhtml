@@ -16,22 +16,17 @@
  
     <p:menubar>
         <p:submenu label="Inicio" icon="pi pi-file">
-            <p:submenu label="New" icon="pi pi-briefcase">
-                <p:menuitem value="Project" url="#" />
-                <p:menuitem value="Other" url="#" />
-            </p:submenu>
-            <p:menuitem value="Open" url="#" />
             <p:separator />
             <p:menuitem value="Cerrar Sesion" url="#" />
         </p:submenu>
  
         <p:submenu label="Alumno" icon="pi pi-pencil">
-            <p:menuitem value="Crear Alumno" action="#{menuBean.alumno()}" icon="pi pi-angle-double-left" />
-            <p:menuitem value="Modificar Alumno" action="#{menuBean.editarAlumno()}" icon="pi pi-angle-double-right" />
+            <p:menuitem value="Crear Alumno" action="#{menuBean.NuevoAlumno()}" icon="pi pi-angle-double-left" />
+            <p:menuitem value="Modificar Alumno" action="#{menuBean.EditarAlumno()}" icon="pi pi-angle-double-right" />
         </p:submenu>
  
         <p:submenu label="Carnet" icon="pi pi-question">
-            <p:menuitem value="Imprimir Carnet" url="#" />
+            <p:menuitem value="Imprimir Carnet" action="#{menuBean.ImprimirCarnet()}" />
 
         </p:submenu>
  
