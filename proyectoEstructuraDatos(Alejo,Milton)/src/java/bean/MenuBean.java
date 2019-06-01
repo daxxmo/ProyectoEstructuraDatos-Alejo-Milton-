@@ -57,21 +57,16 @@ public class MenuBean {
         return model;
     }
  
-    public String login() {
-        return "login";
 
-    }
     public String alumno(){
         return "alumno";
     }
- 
-    public void update() {
-
+    
+    public String editarAlumno(){
+        return "editarAlumno";
     }
  
-    public void delete() {
 
-    }
  
 
 }
