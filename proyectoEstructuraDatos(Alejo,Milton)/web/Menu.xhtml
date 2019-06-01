@@ -37,17 +37,16 @@
  
         <p:submenu label="Reportes" icon="pi pi-cog">
             <p:menuitem value="Alumnos por carrera" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
-            <p:submenu label="Non-Ajax" icon="pi pi-clone">
-                <p:menuitem value="Delete" action="#{menuView.delete}" icon="pi pi-times" update="messages" ajax="false"/>
-            </p:submenu>
+           <p:menuitem value="Alumnos por ciclo" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
+        <p:menuitem value="Alumnos Inactivos" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
         </p:submenu>
    <p:submenu label="Ayuda" icon="pi pi-cog">
             <p:submenu label="Manuales" icon="pi pi-refresh">
                 <p:menuitem value="Manual de Administrador" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
                 <p:menuitem value="Manual de Usuario" action="#{menuView.update}" icon="pi pi-refresh" update="messages"/>
             </p:submenu>
-            <p:submenu label="Non-Ajax" icon="pi pi-clone">
-                <p:menuitem value="Delete" action="#{menuView.delete}" icon="pi pi-times" update="messages" ajax="false"/>
+            <p:submenu label="Sobre la aplicacion" icon="pi pi-clone">
+                <p:menuitem value="Desarroladores" action="#{menuView.delete}" icon="pi pi-times" update="messages" ajax="false"/>
             </p:submenu>
         </p:submenu>
 
