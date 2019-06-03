@@ -28,7 +28,8 @@ import utils.Conexion;
  * @author m!lton
  */
 public class ReporteAlumnosBean {
-                  public void getReporte(String ruta) throws  ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException, ConnectException {
+                 
+    public void getReporte(String ruta) throws  ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException, ConnectException {
 
 
         //Se definen los parametros si es que el reporte necesita

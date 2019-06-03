@@ -31,8 +31,8 @@
         </navigation-case>
     </navigation-rule>
     <managed-bean>
-        <managed-bean-name>reportesAlumnosManageBean</managed-bean-name>
-        <managed-bean-class>bean.ReportesAlumnosManageBean</managed-bean-class>
+        <managed-bean-name>reportesAlumnosManagedBean</managed-bean-name>
+        <managed-bean-class>bean.ReportesAlumnosManagedBean</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
 </faces-config>

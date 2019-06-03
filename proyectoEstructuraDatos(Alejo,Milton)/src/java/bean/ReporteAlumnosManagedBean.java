@@ -5,8 +5,12 @@
  */
 package bean;
 
+import javax.inject.Named;
+import javax.faces.view.ViewScoped;
+import java.io.Serializable;
 import java.net.ConnectException;
 import java.sql.SQLException;
+import javax.annotation.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
 
@@ -14,13 +18,18 @@ import javax.servlet.ServletContext;
  *
  * @author m!lton
  */
-public class ReportesAlumnosManageBean {
+@Named(value = "ReporteAlumnosManagedBean")
+@ViewScoped
+@ManagedBean
+
+public class ReporteAlumnosManagedBean implements Serializable {
 
     /**
-     * Creates a new instance of ReportesAlumnosManageBean
+     * Creates a new instance of ReporteAlumnosManagedBean
      */
-    public ReportesAlumnosManageBean() {
+    public ReporteAlumnosManagedBean() {
     }
+
     //Metodo para invocar el reporte y enviarle los parametros si es que necesita
     public void verReporte() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException, ConnectException {
         
@@ -33,7 +42,7 @@ public class ReportesAlumnosManageBean {
        
         rAlumnos.getReporte(ruta);        
         FacesContext.getCurrentInstance().responseComplete();               
-    }
+    }  
     
     
 }
