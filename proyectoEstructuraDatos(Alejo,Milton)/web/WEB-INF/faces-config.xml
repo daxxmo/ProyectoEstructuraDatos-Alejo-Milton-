@@ -3,13 +3,21 @@
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
-       
+
+ <managed-bean>
+        <description>Reportes</description>
+        <managed-bean-name>reportesBean</managed-bean-name>
+        <managed-bean-class>bean.ReportesBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
     <managed-bean>
         <description>Navegacion</description>
         <managed-bean-name>menuBean</managed-bean-name>
         <managed-bean-class>bean.MenuBean</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
+    
     
     <navigation-rule>
         <from-view-id>Menu.xhtml</from-view-id>
@@ -30,9 +38,5 @@
             <to-view-id>AlumnosCarrera.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    <managed-bean>
-        <managed-bean-name>reportesAlumnosManagedBean</managed-bean-name>
-        <managed-bean-class>bean.ReportesAlumnosManagedBean</managed-bean-class>
-        <managed-bean-scope>view</managed-bean-scope>
-    </managed-bean>
+ 
 </faces-config>

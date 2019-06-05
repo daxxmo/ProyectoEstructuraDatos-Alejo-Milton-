@@ -33,7 +33,7 @@
         <p:submenu label="Reportes" icon="pi pi-cog">
             <p:menuitem value="Alumnos por carrera" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
            <p:menuitem value="Alumnos por ciclo" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
-           <p:menuitem value="Alumnos Activos" actionListener="#{ReporteAlumnosManagedBean.verReporte()}" icon="pi pi-save" update="messages"/>
+           <p:menuitem value="Alumnos Activos" target="blank" action="#{reportesBean.verReporte()}" ajax="false" icon="pi pi-save" update="messages"/>
         </p:submenu>
    <p:submenu label="Ayuda" icon="pi pi-cog">
             <p:submenu label="Manuales" icon="pi pi-refresh">
