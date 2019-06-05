@@ -22,15 +22,15 @@ FROM alumno;]]>
 	</background>
 	<title>
 		<band height="70" splitType="Stretch">
-			<image>
-				<reportElement x="393" y="0" width="159" height="64" uuid="7b4efb89-49e9-4547-a9bd-79c4d25d017b"/>
-				<imageExpression><![CDATA["leaf_banner_gray.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement style="Title" x="0" y="13" width="293" height="33" uuid="945ad5c3-1da1-4dc2-bb51-0f57ed74710f"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[REPORTE ALUMNOS]]></text>
 			</staticText>
+			<image>
+				<reportElement x="433" y="3" width="102" height="43" uuid="111772ea-381d-497f-9247-4de6ba6547ae"/>
+				<imageExpression><![CDATA["C:\\Users\\m!lton\\Documents\\NetBeansProjects\\proyectoEstructuraDatos\\ProyectoEstructuraDatos-Alejo-Milton-\\proyectoEstructuraDatos(Alejo,Milton)\\web\\Images\\LogoUVGCampusSur.JPG"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -53,11 +53,11 @@ FROM alumno;]]>
 				<text><![CDATA[CARNET]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="87" y="19" width="159" height="15" uuid="c15d85a7-205f-4f53-850d-00f8ad02b254"/>
+				<reportElement style="Column header" x="87" y="19" width="206" height="15" uuid="c15d85a7-205f-4f53-850d-00f8ad02b254"/>
 				<text><![CDATA[ALUMNO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="246" y="19" width="224" height="15" uuid="737e544f-cc55-4cfa-a3d3-a81506de2f45"/>
+				<reportElement style="Column header" x="293" y="19" width="177" height="15" uuid="737e544f-cc55-4cfa-a3d3-a81506de2f45"/>
 				<text><![CDATA[CARRERA]]></text>
 			</staticText>
 			<staticText>
@@ -87,11 +87,11 @@ FROM alumno;]]>
 				<textFieldExpression><![CDATA[$F{CARNET}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Detail" x="87" y="0" width="159" height="15" uuid="9b4ef9c1-c8de-480c-87a3-7bc0267da5df"/>
+				<reportElement style="Detail" x="87" y="0" width="206" height="15" uuid="9b4ef9c1-c8de-480c-87a3-7bc0267da5df"/>
 				<textFieldExpression><![CDATA[$F{ALUMNO}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Detail" x="246" y="0" width="224" height="15" uuid="0086ce41-62c0-4688-880b-16afae063d92"/>
+				<reportElement style="Detail" x="293" y="0" width="177" height="15" uuid="0086ce41-62c0-4688-880b-16afae063d92"/>
 				<textFieldExpression><![CDATA[$F{CARRERA}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -122,7 +122,7 @@ FROM alumno;]]>
 				<textElement textAlignment="Right">
 					<font size="10" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
 				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="cb91e5a4-2738-476b-8b5e-525a6aafca24"/>

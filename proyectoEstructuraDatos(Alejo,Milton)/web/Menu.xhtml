@@ -17,7 +17,7 @@
     <p:menubar>
         <p:submenu label="Inicio" icon="pi pi-file">
             <p:separator />
-            <p:menuitem value="Cerrar Sesion" url="#" />
+            <p:menuitem value="Salir" action="#{menuBean.cerrar()}" />
         </p:submenu>
  
         <p:submenu label="Alumno" icon="pi pi-pencil">
@@ -47,7 +47,7 @@
 
         <f:facet name="options">
 
-            <p:commandButton type="button" value="Cerrar Sesion" icon="pi pi-home" />
+
         </f:facet>
     </p:menubar>
 </h:form>

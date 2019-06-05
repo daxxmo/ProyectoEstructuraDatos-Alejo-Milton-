@@ -94,6 +94,19 @@ public class MenuBean {
               public String AlumnosInactivos(){
         return "AlumnosInactivos";
     }
+               public String cerrar() {
+        String resultado = "";
+        IndexBean cerrar = new IndexBean();
+        resultado = cerrar.cerrar();
+        if (resultado.equals("ok")) {
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("SESSION_ROL");
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("SESSION_STATUS");
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("SESSION_USERNAME");
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("SESSION_PASSWORD");
+            resultado = "cerrar";
+        }
+        return resultado;
+    }
 
     }
  
