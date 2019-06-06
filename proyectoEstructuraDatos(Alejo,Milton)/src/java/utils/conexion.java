@@ -16,16 +16,13 @@ import java.sql.SQLException;
  */
 public class Conexion {
 
-
     //Atributos de la clase
     private String host = "localhost";
     private String port;
     private String userName = "root";
     private String password = "master";
     private String dbName = "carnetuvg";
-     private String urlReportesPdf = "http://localhost:8080/proyectoEstructuraDatos(Alejo,Milton)/Reportes/";
-    public static String usuariogmail;
-    public static String passwordgmail;
+
     //Metodo que obtiene la conexion a la base de datos
     public Connection connect() throws ConnectException, SQLException {
         Connection conn;
@@ -92,12 +89,5 @@ public class Conexion {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
-    
-        public String getUrlReportesPdf() {
-        return urlReportesPdf;
-    }
-
-    public void setUrlReportesPdf(String urlReportesPdf) {
-        this.urlReportesPdf = urlReportesPdf;
-    } 
 }
+
