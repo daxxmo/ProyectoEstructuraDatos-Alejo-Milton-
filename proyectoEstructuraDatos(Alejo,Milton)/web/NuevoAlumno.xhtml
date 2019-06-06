@@ -12,26 +12,26 @@
 
             <ui:define name="content">
                         <h:form id="registroAlumnoForm">
-            <p:growl id="growl" showDetail="true" life="2000"/>
+          <p:growl id="growl" showDetail="true" life="2000"/>
             <p:dock position="top">
                 <p:menuitem title="Volver al menu" icon="/Images/home.ico" action="#{NuevoAlumnoBean.regresarMenu()}"/>
             </p:dock>
             <br/>
             <h1>Registro de Alumnos</h1>
-            <p:graphicImage url="Imagenes/icon_user_add.png" style="width: 200px; height: 150px"/>
+            <p:graphicImage url="Images/alumno.png" style="width: 200px; height: 150px"/>
             <table align="center" cellspacing="10" style="font-size: smaller">
                 <tr>
                     <td align="left">
-                        <p:outputLabel value="Codigo *"/>
+                        <p:outputLabel value="Carnet *"/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 150px" value="#{registroDocenteBean.codigo}"/>
+                        <p:inputText style="width: 150px" value="#{NuevoAlumnoBean.carnet}"/>
                     </td>
                     <td align="left">
-                        <p:outputLabel value="DPI *"/>
+                        <p:outputLabel value="Año "/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 150px" value="#{registroDocenteBean.dpi}"/>
+                        <p:inputText style="width: 150px" value="#{NuevoAlumnoBean.año}"/>
                     </td>
                 </tr>
                 <tr>
@@ -39,46 +39,33 @@
                         <p:outputLabel value="Nombres *"/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 300px" value="#{registroDocenteBean.nombre}"/>
+                        <p:inputText style="width: 300px" value="#{NuevoAlumnoBean.nombre}"/>
                     </td>
                     <td align="left">
                         <p:outputLabel value="Apellidos"/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 300px" value="#{registroDocenteBean.apellido}"/>
+                        <p:inputText style="width: 300px" value="#{NuevoAlumnoBean.apellido}"/>
                     </td>
                 </tr>
                 <tr>
                     <td align="left">
-                        <p:outputLabel value="Correo"/>
+                        <p:outputLabel value="Carrera"/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 300px" value="#{registroDocenteBean.correo}"/>
+                        <p:inputText style="width: 300px" value="#{NuevoAlumnoBean.carrera}"/>
                     </td>
                     <td align="left">
-                        <p:outputLabel value="Telefono"/>
+                        <p:outputLabel value="Ciclo"/>
                     </td>
                     <td align="left">
-                        <p:inputMask mask="9999-9999" style="width: 150px" value="#{registroDocenteBean.telefono}"/>
+                        <p:inputMask mask="9999-9999" style="width: 150px" value="#{NuevoAlumnoBean.ciclo}"/>
                     </td>
                 </tr>
-                <tr>
-                    <td align="left">
-                        <p:outputLabel value="Fecha Nac *"/>
-                    </td>
-                    <td align="left">
-                        <p:inputMask mask="99/99/9999" style="width: 150px" value="#{registroDocenteBean.fechaNacimiento}"/>
-                    </td>
-                    <td align="left">
-                        <p:outputLabel value="Dirección"/>
-                    </td>
-                    <td align="left">
-                        <p:inputText style="width: 300px" value="#{registroDocenteBean.direccion}"/>
-                    </td>
-                </tr>
+  
                 <tr>
                     <td colspan="4">
-                        <p:commandButton value="Registrar" title="Registra al docente" icon="ui-icon-disk" action="#{registroDocenteBean.validarDocente()}" update="registroDocenteForm"/>
+                        <p:commandButton value="Registrar" title="Registra al alumno" icon="ui-icon-disk" action="#{NuevoAlumnoBean.validarAlumno()}" update="registroAlumnoForm"/>
                     </td>
                 </tr>
             </table>
