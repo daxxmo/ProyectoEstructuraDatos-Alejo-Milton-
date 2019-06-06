@@ -11,4 +11,8 @@ package bean;
  */
 public class NuevoAlumnoBean {
     
+    public String regresarMenu(){
+        return "regresarMenu";
+    }
+    
 }

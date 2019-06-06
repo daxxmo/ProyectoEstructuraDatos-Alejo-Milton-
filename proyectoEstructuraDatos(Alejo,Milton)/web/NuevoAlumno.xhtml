@@ -1,23 +1,23 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+      
+  
 
-    <body>
-
-        <ui:composition template="./Template/Template.xhtml">
+        <ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./Template/Template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+ 
 
             <ui:define name="content">
                         <h:form id="registroAlumnoForm">
             <p:growl id="growl" showDetail="true" life="2000"/>
             <p:dock position="top">
-                <p:menuitem title="Volver al menu" icon="/Imagenes/icon_home.ico" action="#{registroDocenteBean.accionesDock()}"/>
-                <p:menuitem title="Ayuda" icon="/Imagenes/icon_help2.png" url="#"/>
+                <p:menuitem title="Volver al menu" icon="/Images/home.ico" action="#{NuevoAlumnoBean.regresarMenu()}"/>
             </p:dock>
             <br/>
-            <h1>Registro de Docentes</h1>
+            <h1>Registro de Alumnos</h1>
             <p:graphicImage url="Imagenes/icon_user_add.png" style="width: 200px; height: 150px"/>
             <table align="center" cellspacing="10" style="font-size: smaller">
                 <tr>
@@ -83,9 +83,9 @@
                 </tr>
             </table>
         </h:form>
+
             </ui:define>
 
         </ui:composition>
 
-    </body>
-</html>
+
