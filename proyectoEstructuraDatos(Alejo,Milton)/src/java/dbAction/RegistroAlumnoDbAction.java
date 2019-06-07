@@ -15,6 +15,7 @@ import java.sql.Statement;
 import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import static javax.swing.UIManager.getBoolean;
 
 public class RegistroAlumnoDbAction {
     
@@ -30,14 +31,15 @@ public class RegistroAlumnoDbAction {
             Conexion conexion = new Conexion();
             conect = conexion.connect();
             Statement stmt = conect.createStatement();
-            String query = "insert into alumno(carnet_alumno,nombre_alumno,apellido_alumno,carrera_alumno,anio_alumno,ciclo_alumno,foto_alumno,id_estado) VALUES ('" + carnet + "','" + nombre + "','" + apellido + "','" + carrera + "','" + año + "','" + ciclo + "','" + foto + "',1)";
-            ResultSet rs = stmt.executeQuery(query);
+            String query = "insert into alumno (carnet_alumno,nombre_alumno,apellido_alumno,carrera_alumno,anio_alumno,ciclo_alumno,foto_alumno,id_estado) VALUES ('" + carnet + "','" + nombre + "','" + apellido + "','" + carrera + "','" + año + "','" + ciclo + "','" + foto + "',1)";
+            stmt.execute(query);
+            ResultSet rs = null;
             if (rs != null) {
                 while (rs.next()) {
                     result = rs.getBoolean(1);
                     if (result == true) {
                         resultado = "exito";
-                        Mensajes.infoMessage("Registro", "Alumno registrado exitosamente");
+                        Mensajes.infoMessage("Registro", "Error al realizar la transaccion");
                     } else {
                         resultado = "error";
                         Mensajes.infoMessage("Registro", "El alumno ya se encuentra resgistrado");
@@ -45,7 +47,7 @@ public class RegistroAlumnoDbAction {
                 }
             } else {
                 resultado = "error";
-                Mensajes.infoMessage("Registro", "Error al realizar la transaccion");
+                Mensajes.infoMessage("Registro", "Alumno registrado exitosamente");
             }
         } catch (ConnectException | SQLException ex) {
             ex.printStackTrace();
