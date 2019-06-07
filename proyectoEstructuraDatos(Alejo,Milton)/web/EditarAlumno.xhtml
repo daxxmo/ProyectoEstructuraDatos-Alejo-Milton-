@@ -6,7 +6,8 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 template="./Template/Template.xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:p="http://primefaces.org/ui">
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
 
             <ui:define name="content">
                 <h:form id="EditarAlumnoForm">
@@ -15,7 +16,7 @@
                 <p:menuitem title="Volver al menu" icon="/Images/home.ico" action="#{NuevoAlumnoBean.regresarMenu()}"/>
             </p:dock>
             <br/>
-            <h1>Registro de Alumnos</h1>
+            <h1>Actualizar Alumnos</h1>
             <p:graphicImage url="Images/alumno.png" style="width: 200px; height: 150px"/>
             <table align="center" cellspacing="10" style="font-size: smaller">
                 <tr>
@@ -23,9 +24,11 @@
                         <p:outputLabel value="Carnet *"/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 150px" value="#{NuevoAlumnoBean.carnet}"/>
+                        <p:inputText style="width: 150px" value="#{EditarAlumnoBean.carnet}"/>
+                        <p:commandButton title="Buscar" icon="ui-icon-search" action="#{EditarAlumnoBean.consultarAlumno()}" update="EditarAlumnoForm"/>
                     </td>
-                    <td align="left">
+                
+                     <td align="left">
                         <p:outputLabel value="Año "/>
                     </td>
                     <td align="left">
@@ -51,13 +54,12 @@
                         <p:outputLabel value="Carrera"/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 300px" value="#{NuevoAlumnoBean.carrera}"/>
-                    </td>
-                    <td align="left">
-                        <p:outputLabel value="Foto"/>
-                    </td>
-                    <td align="left">
-                        <p:inputText style="width: 300px" value="#{NuevoAlumnoBean.foto}"/>
+                        <p:selectOneMenu id="carrera" value="#{NuevoAlumnoBean.carrera}" style="width:300px">
+                        <f:selectItem itemLabel="Seleccione una" itemValue="" />
+                        <f:selectItem itemLabel="Licenciatura en Administracion de Empresas" itemValue="Licenciatura en Administracion de Empresas" />
+                        <f:selectItem itemLabel="Licenciatura en Informatica" itemValue="Licenciatura en Informatica" />
+                        <f:selectItem itemLabel="Ingenieria en Tecnologia Industrial" itemValue="Ingenieria en Tecnologia Industrial" />
+                        </p:selectOneMenu>
                     </td>
                     <td align="left">
                         <p:outputLabel value="Ciclo"/>
@@ -65,8 +67,18 @@
                     <td align="left">
                         <p:inputText style="width: 150px" value="#{NuevoAlumnoBean.ciclo}"/>
                     </td>
+
                 </tr>
-  
+                       <td align="left">
+                        <p:outputLabel value="Estado"/>
+                    </td>
+                    <td align="left">
+                         <p:selectOneMenu id="estado" value="#{EditarAlumnoBean.estado}" style="width:100px">
+                        <f:selectItem itemLabel="Seleccione una" itemValue="" />
+                        <f:selectItem itemLabel="ACTIVO" itemValue="1" />
+                        <f:selectItem itemLabel="INACTIVO" itemValue="2" />
+                        </p:selectOneMenu>
+                    </td>
                 <tr>
                     <td colspan="4">
                         <p:commandButton value="Registrar" title="Registra al alumno" icon="ui-icon-disk" action="#{NuevoAlumnoBean.validarAlumno()}" update="EditarAlumnoForm"/>

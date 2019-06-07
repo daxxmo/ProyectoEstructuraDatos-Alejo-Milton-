@@ -23,6 +23,7 @@ public class EditarAlumnoBean {
     private String año;
     private String ciclo;
     private String foto;
+    private Integer estado;
     
     public String regresarMenu(){
         return "regresarMenu";
@@ -83,6 +84,14 @@ public class EditarAlumnoBean {
     public void setFoto(String foto) {
         this.foto = foto;
     }
+
+    public Integer getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Integer estado) {
+        this.estado = estado;
+    }
     
       public void validarAlumno() throws ParseException{
         String resultado = "";
@@ -104,6 +113,30 @@ public class EditarAlumnoBean {
             }
         }
     }
+        public void consultarAlumno(){
+        Alumno alumno = new Alumno();
+        if(this.getCarnet().equals("")){
+            Mensajes.errorMessage("Advertencia", "Debe ingresar el carnet del alumno");
+        }
+        else{
+            int carnet = Integer.parseInt(this.getCarnet());
+            ActualizarAlumnoDbAction consulta = new ActualizarAlumnoDbAction();
+            alumno = consulta.consultarAlumno(carnet);
+            if(alumno != null){
+                this.setNombre(alumno.getNombre());
+                this.setApellido(alumno.getApellido());
+                this.setAño(alumno.getAño());
+                this.setCiclo(alumno.getCiclo());
+                this.setFoto(alumno.getFoto());
+                this.setEstado(alumno.getEstado());
+
+               
+            }
+            else{
+                Mensajes.errorMessage("Error", "Alumno no encontrado");
+            }
+        }
+    } 
 
     private void limpiarCampos() {
         this.setCarnet("");
