@@ -38,7 +38,7 @@ public class RegistroAlumnoDbAction {
                 while (rs.next()) {
                     result = rs.getBoolean(1);
                     if (result == true) {
-                        resultado = "exito";
+                        resultado = "error";
                         Mensajes.infoMessage("Registro", "Error al realizar la transaccion");
                     } else {
                         resultado = "error";
@@ -46,7 +46,7 @@ public class RegistroAlumnoDbAction {
                     }
                 }
             } else {
-                resultado = "error";
+                resultado = "exito";
                 Mensajes.infoMessage("Registro", "Alumno registrado exitosamente");
             }
         } catch (ConnectException | SQLException ex) {
