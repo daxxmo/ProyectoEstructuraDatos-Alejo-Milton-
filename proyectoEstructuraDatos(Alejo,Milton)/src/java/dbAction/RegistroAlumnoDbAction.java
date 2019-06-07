@@ -16,7 +16,7 @@ import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-public class RegistroAlumnoDbAction implements Serializable {
+public class RegistroAlumnoDbAction {
     
     public RegistroAlumnoDbAction() {
     }
@@ -30,7 +30,7 @@ public class RegistroAlumnoDbAction implements Serializable {
             Conexion conexion = new Conexion();
             conect = conexion.connect();
             Statement stmt = conect.createStatement();
-            String query = "insert into alumno (carnet_alumno,nombre_alumno,apellido_alumno,carrera_alumno, anio_alumno, ciclo_alumno, foto_alumno, id_estado) VALUES ('" + carnet + "','" + nombre + "','" + apellido + "','" + carrera + "','" + año + "','" + ciclo + "','" + foto + "','" + 1 + "')";
+            String query = "insert into alumno(carnet_alumno,nombre_alumno,apellido_alumno,carrera_alumno,anio_alumno,ciclo_alumno,foto_alumno,id_estado) VALUES ('" + carnet + "','" + nombre + "','" + apellido + "','" + carrera + "','" + año + "','" + ciclo + "','" + foto + "',1)";
             ResultSet rs = stmt.executeQuery(query);
             if (rs != null) {
                 while (rs.next()) {
@@ -51,6 +51,7 @@ public class RegistroAlumnoDbAction implements Serializable {
             ex.printStackTrace();
             resultado = "error";
             Mensajes.errorMessage("Registro", "Error al conectarse a la base de datos");
+
         }
         return resultado;
     }

@@ -10,15 +10,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author Ismael Ruiz
- */
-public class Conexion {
 
+public class Conexion {
     //Atributos de la clase
     private String host = "localhost";
-    private String port;
+    private String port = "3306";
     private String userName = "root";
     private String password = "master";
     private String dbName = "carnetuvg";
@@ -90,4 +86,3 @@ public class Conexion {
         this.dbName = dbName;
     }
 }
-
