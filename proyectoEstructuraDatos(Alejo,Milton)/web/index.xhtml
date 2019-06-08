@@ -40,23 +40,23 @@
             
             <p:dialog header="Registrar" widgetVar="dlg2" modal="true" resizable="false">
                 <h:panelGrid columns="2" cellpadding="5" style="text-align: left;">
-                    <h:outputLabel for="carneR" value="No. Carné:" />
-                    <p:inputText id="carneR"  label="carneR" />
+                    <h:outputLabel for="carneReg" value="No. Carné:" />
+                    <p:inputText id="carneReg" value="#{indexBean.carneReg}" label="carneReg" />
                     
-                    <h:outputLabel for="nombreR" value="Nombre:" />
-                    <p:inputText id="nombreR"  label="nombreR" />
+                    <h:outputLabel for="nombreReg" value="Nombre:" />
+                    <p:inputText id="nombreReg" value="#{indexBean.nombreReg}" label="nombreReg" />
                     
-                    <h:outputLabel for="apellidoR" value="Apellido:" />
-                    <p:inputText id="apellidoR"  label="apellidoR" />
+                    <h:outputLabel for="apellidoReg" value="Apellido:" />
+                    <p:inputText id="apellidoReg" value="#{indexBean.apellidoReg}" label="apellidoReg" />
              
-                    <h:outputLabel for="passwordR" value="Contraseña:" />
-                    <p:password id="passwordR"  label="passwordR" />
+                    <h:outputLabel for="passwordReg" value="Contraseña:" />
+                    <p:password id="passwordReg" value="#{indexBean.passwordReg}" label="passwordReg" />
                     
-                    <h:outputLabel for="correoR" value="Correo:" />
-                    <p:inputText id="correoR"  label="correoR" />
+                    <h:outputLabel for="correoReg" value="Correo:" />
+                    <p:inputText id="correoReg" value="#{indexBean.correoReg}" label="correoReg" />
              
                 <f:facet name="footer">
-                    <p:commandButton value="Registrar" update="growl"/>
+                    <p:commandButton value="Registrar" update="growl" action="#{indexBean.validarUsuario()}"/>
                 </f:facet>  
                 </h:panelGrid>
             </p:dialog>
