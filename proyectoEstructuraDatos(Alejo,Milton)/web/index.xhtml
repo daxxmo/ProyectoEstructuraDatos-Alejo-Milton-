@@ -27,10 +27,10 @@
             <p:dialog header="Ingresar" widgetVar="dlg" modal="true" resizable="false">
                 <h:panelGrid columns="2" cellpadding="5" style="text-align: left;">
                     <h:outputLabel for="username" value="Usuario:" />
-                    <p:inputText id="username" value="#{indexBean.username}" required="true" label="username" />
+                    <p:inputText id="username" value="#{indexBean.username}" label="username" />
              
                     <h:outputLabel for="password" value="Contraseña:" />
-                    <p:password id="password" value="#{indexBean.password}" required="true" label="password" />
+                    <p:password id="password" value="#{indexBean.password}" label="password" />
              
                 <f:facet name="footer">
                     <p:commandButton value="Ingresar" update="growl" action="#{indexBean.login()}"/>
