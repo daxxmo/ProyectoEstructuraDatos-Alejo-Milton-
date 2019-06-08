@@ -10,6 +10,12 @@
         <managed-bean-class>bean.ReportesBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+     <managed-bean>
+        <description>ImprimirCarnet</description>
+        <managed-bean-name>imprimirCarnetBean</managed-bean-name>
+        <managed-bean-class>bean.ImprimirCarnetBean</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
  <managed-bean>
         <description>NuevoAlumno</description>
         <managed-bean-name>NuevoAlumnoBean</managed-bean-name>
@@ -73,6 +79,14 @@
     
         <navigation-rule>
         <from-view-id>/EditarAlumno.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>regresarMenu</from-outcome>
+            <to-view-id>/Menu.xhtml</to-view-id>
+        </navigation-case>
+        </navigation-rule>
+        
+          <navigation-rule>
+        <from-view-id>/ImprimirCarnet.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>regresarMenu</from-outcome>
             <to-view-id>/Menu.xhtml</to-view-id>
