@@ -107,13 +107,15 @@ public class IndexBean {
     
     public String login() throws ConnectException, SQLException{
         
+        String encriptado = DigestUtils.sha512Hex(String.valueOf(this.getPassword()));
         String resultado = "";
         if(this.getUsername().equals("") || this.getPassword().equals("")){
             Mensajes.errorMessage("Error", "Debe llenar los dos campos");
         }
         else{
+            
             LoginDbAction validar = new LoginDbAction();
-            resultado = validar.ValidarLogin(this.getUsername(), this.getPassword());
+            resultado = validar.ValidarLogin(this.getUsername(), encriptado);
         }
         
         return resultado;
