@@ -140,7 +140,8 @@ public class IndexBean {
             carneReg = this.getCarneReg();
             nombreReg = this.getNombreReg();
             apellidoReg = this.getApellidoReg();
-            passwordReg = this.getPasswordReg();
+            String encriptado = DigestUtils.sha512Hex(String.valueOf(this.getPasswordReg()));
+            passwordReg = encriptado;
             correoReg = this.getCorreoReg();
             
             RegistroUsuarioDbAction registro = new RegistroUsuarioDbAction();
