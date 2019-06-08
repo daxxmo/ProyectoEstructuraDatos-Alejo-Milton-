@@ -13,11 +13,12 @@ import java.sql.SQLException;
 
 public class Conexion {
     //Atributos de la clase
+    //Alejandro: Mi puerto, contraseña y nombre de BD son diferentes, allí se los cambias a los tuyos
     private String host = "localhost";
-    private String port = "3306";
+    private String port = "3308";
     private String userName = "root";
-    private String password = "master";
-    private String dbName = "carnetuvg";
+    private String password = "admin";
+    private String dbName = "cartnetuvg";
 
     //Metodo que obtiene la conexion a la base de datos
     public Connection connect() throws ConnectException, SQLException {
@@ -25,7 +26,7 @@ public class Conexion {
         try {
             // Creamos la conexión
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://" + host + "/" + dbName;
+            String url = "jdbc:mysql://" + host + ":" + port + "/" + dbName;
             conn = DriverManager.getConnection(url, userName, password);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
