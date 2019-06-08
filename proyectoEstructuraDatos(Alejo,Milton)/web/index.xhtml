@@ -5,30 +5,61 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Login</title>
+        <title>SICUVG</title>
     </h:head>
-    <h:body>
+    <h:body style="text-align: center; background-color: darkcyan; background-image: url(Images/login2.jpg); background-repeat: no-repeat; background-size: cover;">
+        
+        <h:form id="loginForm">
+            
+            <h:panelGrid columns="2" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 300px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                <h:outputLink onclick="PF('dlg').show();" title="login">
+                    <p:commandButton value="Ingresar" style="font-size: 30px; margin: 0 0 0 7px;" />
+                </h:outputLink>
+                
+            <h:outputLink onclick="PF('dlg2').show();" title="registrar">
+                    <p:commandButton value="Registrar" style="font-size: 30px; margin: 0 0 0 7px;" />
+            </h:outputLink>                
+                
+            </h:panelGrid>
+            
+            <p:growl id="growl" showDetail="true" sticky="true" life="2000"/>
 
-        <h:form>
-        <h:panelGrid columns="1" cellpadding="5">
-            <p:commandButton value="Login" type="button" onclick="PF('dlg1').show();" />
-            <p:graphicImage library="Images" name="iniciar_sesion.png" onclick="PF('dlg1').show();" />
-        </h:panelGrid>
-        <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
-        <p:dialog header="Login" widgetVar="dlg1" modal="true" resizable="false">
-        <h:panelGrid columns="2" cellpadding="5">
-            <h:outputLabel for="username" value="Username:" />
-            <p:inputText id="username" value="#{userLoginView.username}" required="true" label="username" />
+            <p:dialog header="Ingresar" widgetVar="dlg" modal="true" resizable="false">
+                <h:panelGrid columns="2" cellpadding="5" style="text-align: left;">
+                    <h:outputLabel for="username" value="Usuario:" />
+                    <p:inputText id="username" value="#{indexBean.username}" label="username" />
              
-            <h:outputLabel for="password" value="Password:" />
-            <p:password id="password" value="#{userLoginView.password}" required="true" label="password" />
+                    <h:outputLabel for="password" value="Contraseña:" />
+                    <p:password id="password" value="#{indexBean.password}" label="password" />
              
-            <f:facet name="footer">
-                <p:commandButton value="Login" update="growl" action="#{userLoginView.login}"
-                                 oncomplete="handleLoginRequest(xhr, status, args)" />
-            </f:facet>  
-        </h:panelGrid>
-    </p:dialog>
+                <f:facet name="footer">
+                    <p:commandButton value="Ingresar" update="growl" action="#{indexBean.login()}"/>
+                </f:facet>  
+                </h:panelGrid>
+            </p:dialog>
+            
+            <p:dialog header="Registrar" widgetVar="dlg2" modal="true" resizable="false">
+                <h:panelGrid columns="2" cellpadding="5" style="text-align: left;">
+                    <h:outputLabel for="carneR" value="No. Carné:" />
+                    <p:inputText id="carneR"  label="carneR" />
+                    
+                    <h:outputLabel for="nombreR" value="Nombre:" />
+                    <p:inputText id="nombreR"  label="nombreR" />
+                    
+                    <h:outputLabel for="apellidoR" value="Apellido:" />
+                    <p:inputText id="apellidoR"  label="apellidoR" />
+             
+                    <h:outputLabel for="passwordR" value="Contraseña:" />
+                    <p:password id="passwordR"  label="passwordR" />
+                    
+                    <h:outputLabel for="correoR" value="Correo:" />
+                    <p:inputText id="correoR"  label="correoR" />
+             
+                <f:facet name="footer">
+                    <p:commandButton value="Registrar" update="growl"/>
+                </f:facet>  
+                </h:panelGrid>
+            </p:dialog>
         </h:form>
     </h:body>
 </html>
