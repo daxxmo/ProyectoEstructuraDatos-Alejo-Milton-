@@ -41,22 +41,22 @@
             <p:dialog header="Registrar" widgetVar="dlg2" modal="true" resizable="false">
                 <h:panelGrid columns="2" cellpadding="5" style="text-align: left;">
                     <h:outputLabel for="carneR" value="No. Carné:" />
-                    <p:inputText id="carneR" value="#{indexBean.username}" required="true" label="carneR" />
+                    <p:inputText id="carneR"  label="carneR" />
                     
                     <h:outputLabel for="nombreR" value="Nombre:" />
-                    <p:inputText id="nombreR" value="#{indexBean.username}" required="true" label="nombreR" />
+                    <p:inputText id="nombreR"  label="nombreR" />
                     
                     <h:outputLabel for="apellidoR" value="Apellido:" />
-                    <p:inputText id="apellidoR" value="#{indexBean.username}" required="true" label="apellidoR" />
+                    <p:inputText id="apellidoR"  label="apellidoR" />
              
                     <h:outputLabel for="passwordR" value="Contraseña:" />
-                    <p:password id="passwordR" value="#{indexBean.password}" required="true" label="passwordR" />
+                    <p:password id="passwordR"  label="passwordR" />
                     
                     <h:outputLabel for="correoR" value="Correo:" />
-                    <p:inputText id="correoR" value="#{indexBean.username}" required="true" label="correoR" />
+                    <p:inputText id="correoR"  label="correoR" />
              
                 <f:facet name="footer">
-                    <p:commandButton value="Registrar" update="growl" action="#{indexBean.login()}"/>
+                    <p:commandButton value="Registrar" update="growl"/>
                 </f:facet>  
                 </h:panelGrid>
             </p:dialog>
