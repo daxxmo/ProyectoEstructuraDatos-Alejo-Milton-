@@ -71,5 +71,13 @@ public class IndexBean {
         //FacesContext.getCurrentInstance().addMessage(null,
                 //new FacesMessage("Welcome " + username + " " + password));   
     }
+
+
+
+    String loguot() {
+               this.setUsername("");
+        this.setPassword("");
+        return "ok";
+    }
     
 }

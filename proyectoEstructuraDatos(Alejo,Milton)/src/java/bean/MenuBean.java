@@ -97,7 +97,7 @@ public class MenuBean {
                public String cerrar() {
         String resultado = "";
         IndexBean cerrar = new IndexBean();
-        resultado = cerrar.cerrar();
+        resultado = cerrar.loguot();
         if (resultado.equals("ok")) {
             FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("SESSION_ROL");
             FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("SESSION_STATUS");
