@@ -12,7 +12,7 @@
     </managed-bean>
      <managed-bean>
         <description>ImprimirCarnet</description>
-        <managed-bean-name>imprimirCarnetBean</managed-bean-name>
+        <managed-bean-name>ImprimirCarnetBean</managed-bean-name>
         <managed-bean-class>bean.ImprimirCarnetBean</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>

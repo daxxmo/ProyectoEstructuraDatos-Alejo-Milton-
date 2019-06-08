@@ -16,12 +16,17 @@
                 <p:menuitem title="Volver al menu" icon="/Images/home.ico" action="#{NuevoAlumnoBean.regresarMenu()}"/>
             </p:dock>
             <br/>
-            <h1>Actualizar Alumnos</h1>
+            <h1>Imprimir carnet</h1>
             <p:graphicImage url="Images/alumno.png" style="width: 200px; height: 150px"/>
             <table align="center" cellspacing="10" style="font-size: smaller">
                 <tr>
                     <td align="left">
+                     <td align="left">
                         <p:outputLabel value="Carnet *"/>
+                    </td>
+                    <td align="left">
+                        <p:inputText style="width: 150px" value="#{imprimirCarnetBean.consultarAlumno()}"/>
+                    </td>
                     </td>
                     <td align="left">
                         <p:inputText style="width: 150px" value="#{EditarAlumnoBean.carnet}"/>

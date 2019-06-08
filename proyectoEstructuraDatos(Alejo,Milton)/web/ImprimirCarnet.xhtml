@@ -5,38 +5,38 @@
                 template="./Template/Template.xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:p="http://primefaces.org/ui"
-                xmlns:f="http://xmlns.jcp.org/jsf/core">
- 
-
-            <ui:define name="content">
-                        <h:form id="imprimirCarnetForm">
-          <p:growl id="growl" showDetail="true" life="2000"/>
-            <p:dock position="top">
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+     
+    <ui:define name="content">
+        <h:form id="EditarAlumnoForm">
+        <p:growl id="growl" showDetail="true" life="2000"/>
+        <p:dock position="top">
                 <p:menuitem title="Volver al menu" icon="/Images/home.ico" action="#{imprimirCarnetBean.regresarMenu()}"/>
             </p:dock>
-            
-            <h1>ImprimirCarnet</h1>
+        <br/>
+        <h1>Actualizar Alumnos</h1>
             <p:graphicImage url="Images/alumno.png" style="width: 200px; height: 150px"/>
             <table align="center" cellspacing="10" style="font-size: smaller">
-                <tr>
+            <tr>
                     <td align="left">
-                        <p:outputLabel value="Carnet *"/>
+                        <p:outputLabel value="Carnet"/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 150px" value="#{imprimirCarnetBean.consultarAlumno()}"/>
+                        <p:inputText style="width: 300px" value="#{imprimirCarnetBean.consultarAlumno()}"/>
                     </td>
-                </tr>
-
- 
                 <tr>
                     <td colspan="4">
-                        <p:commandButton value="Imprimir" title="Imprime Carnet" icon="ui-icon-disk" action="#{imprimirCarnetBean.imprimirCarnet()}" update="imprimirCarnetForm"/>
+                        <p:commandButton value="Imprimir" title="Imprime carnet" icon="ui-icon-disk" action="#{imprimirCarnetBean.validarAlumno()}" update="EditarAlumnoForm"/>
                     </td>
                 </tr>
+
+
+                </tr> 
             </table>
-        </h:form>
-
-            </ui:define>
-
-        </ui:composition>
+        </h:form>    
+           
+               
+    </ui:define>    
+            
+</ui:composition>
 
