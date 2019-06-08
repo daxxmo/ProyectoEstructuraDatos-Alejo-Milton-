@@ -6,11 +6,13 @@
 package bean;
 
 import dbAction.LoginDbAction;
+import dbAction.RegistroUsuarioDbAction;
 import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.Properties;
 import javax.faces.application.FacesMessage;
@@ -28,6 +30,8 @@ import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 import utils.Mensajes;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.jboss.weld.context.RequestContext;
+import org.primefaces.PrimeFaces;
 
 /**
  *
@@ -38,6 +42,52 @@ import org.apache.commons.codec.digest.DigestUtils;
 public class IndexBean {
     private String username;
     private String password;
+    
+    private String carneReg;
+    private String nombreReg;
+    private String apellidoReg;
+    private String passwordReg;
+    private String correoReg;
+
+    public String getCarneReg() {
+        return carneReg;
+    }
+
+    public void setCarneReg(String carneReg) {
+        this.carneReg = carneReg;
+    }
+
+    public String getNombreReg() {
+        return nombreReg;
+    }
+
+    public void setNombreReg(String nombreReg) {
+        this.nombreReg = nombreReg;
+    }
+
+    public String getApellidoReg() {
+        return apellidoReg;
+    }
+
+    public void setApellidoReg(String apellidoReg) {
+        this.apellidoReg = apellidoReg;
+    }
+
+    public String getPasswordReg() {
+        return passwordReg;
+    }
+
+    public void setPasswordReg(String passwordReg) {
+        this.passwordReg = passwordReg;
+    }
+
+    public String getCorreoReg() {
+        return correoReg;
+    }
+
+    public void setCorreoReg(String correoReg) {
+        this.correoReg = correoReg;
+    }
 
     public String getUsername() {
         return username;
@@ -72,4 +122,32 @@ public class IndexBean {
                 //new FacesMessage("Welcome " + username + " " + password));   
     }
     
+    public void validarUsuario() throws ParseException{
+        String resultado = "";
+        
+        if(this.getCarneReg().equals("") || this.getNombreReg().equals("")){
+            Mensajes.errorMessage("Advertencia", "Los campos con * son obligatorios");
+        }
+        else{
+            carneReg = this.getCarneReg();
+            nombreReg = this.getNombreReg();
+            apellidoReg = this.getApellidoReg();
+            passwordReg = this.getPasswordReg();
+            correoReg = this.getCorreoReg();
+            
+            RegistroUsuarioDbAction registro = new RegistroUsuarioDbAction();
+            resultado = registro.RegistrarUsuario(carneReg, nombreReg, apellidoReg, passwordReg, correoReg);
+            if(resultado.equals("exito")){
+                limpiarCampos();
+            }
+        }
+    }
+    
+    private void limpiarCampos() {
+        carneReg = "";
+        nombreReg = "";
+        apellidoReg = "";
+        passwordReg = "";
+        correoReg = "";
+    }
 }
