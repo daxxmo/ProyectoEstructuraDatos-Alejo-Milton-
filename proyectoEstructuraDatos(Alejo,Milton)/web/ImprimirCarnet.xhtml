@@ -8,10 +8,10 @@
     xmlns:f="http://xmlns.jcp.org/jsf/core">
      
     <ui:define name="content">
-        <h:form id="EditarAlumnoForm">
+        <h:form id="ImprimirCarnetForm">
         <p:growl id="growl" showDetail="true" life="2000"/>
         <p:dock position="top">
-                <p:menuitem title="Volver al menu" icon="/Images/home.ico" action="#{imprimirCarnetBean.regresarMenu()}"/>
+            <p:menuitem title="Volver al menu" icon="/Images/home.ico" action="#{ImprmirCarnetBean.regresarMenu()}"/>
             </p:dock>
         <br/>
         <h1>Actualizar Alumnos</h1>
@@ -22,11 +22,11 @@
                         <p:outputLabel value="Carnet"/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 300px" value="#{imprimirCarnetBean.consultarAlumno()}"/>
+                        <p:inputText style="width: 300px" value="#{ImprmirCarnetBean.carnet}"/>
                     </td>
                 <tr>
                     <td colspan="4">
-                        <p:commandButton value="Imprimir" title="Imprime carnet" icon="ui-icon-disk" action="#{imprimirCarnetBean.validarAlumno()}" update="EditarAlumnoForm"/>
+                        <p:commandButton value="Imprimir" title="Imprime carnet" icon="ui-icon-disk" action="#{ImprmirCarnetBean.validarAlumno()}" update="ImprimirCarnetForm"/>
                     </td>
                 </tr>
 

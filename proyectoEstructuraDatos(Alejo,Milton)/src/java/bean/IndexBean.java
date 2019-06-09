@@ -37,8 +37,7 @@ import org.primefaces.PrimeFaces;
  *
  * @author GALLO
  */
-@ManagedBean
-@SessionScoped
+
 public class IndexBean {
     private String username;
     private String password;

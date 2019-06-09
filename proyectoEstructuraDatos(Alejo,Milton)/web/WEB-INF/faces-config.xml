@@ -10,24 +10,29 @@
         <managed-bean-class>bean.ReportesBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
-     <managed-bean>
-        <description>ImprimirCarnet</description>
-        <managed-bean-name>ImprimirCarnetBean</managed-bean-name>
-        <managed-bean-class>bean.ImprimirCarnetBean</managed-bean-class>
-        <managed-bean-scope>view</managed-bean-scope>
-    </managed-bean>
  <managed-bean>
         <description>NuevoAlumno</description>
         <managed-bean-name>NuevoAlumnoBean</managed-bean-name>
         <managed-bean-class>bean.NuevoAlumnoBean</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
-    
      <managed-bean>
         <description>EditarAlumno</description>
         <managed-bean-name>EditarAlumnoBean</managed-bean-name>
         <managed-bean-class>bean.EditarAlumnoBean</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>ImprimirCarnet</description>
+        <managed-bean-name>ImprmirCarnetBean</managed-bean-name>
+        <managed-bean-class>bean.ImprimirCarnetBean</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+        <managed-bean>
+        <description>Index</description>
+        <managed-bean-name>IndexBean</managed-bean-name>
+        <managed-bean-class>bean.IndexBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
 
     <managed-bean>
@@ -38,30 +43,22 @@
     </managed-bean>
     
     <navigation-rule>
-        <from-view-id>/index.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>administrador</from-outcome>
-            <to-view-id>/Menu.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    
-    <navigation-rule>
-        <from-view-id>/Menu.xhtml</from-view-id>
+        <from-view-id>Menu.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>NuevoAlumno</from-outcome>
-            <to-view-id>/NuevoAlumno.xhtml</to-view-id>
+            <to-view-id>NuevoAlumno.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>EditarAlumno</from-outcome>
-            <to-view-id>/EditarAlumno.xhtml</to-view-id>
+            <to-view-id>EditarAlumno.xhtml</to-view-id>
         </navigation-case>
          <navigation-case>
             <from-outcome>ImprimirCarnet</from-outcome>
-            <to-view-id>/ImprimirCarnet.xhtml</to-view-id>
+            <to-view-id>ImprimirCarnet.xhtml</to-view-id>
         </navigation-case>
          <navigation-case>
             <from-outcome>AlumnosCarrera</from-outcome>
-            <to-view-id>/AlumnosCarrera.xhtml</to-view-id>
+            <to-view-id>AlumnosCarrera.xhtml</to-view-id>
         </navigation-case>
          <navigation-case>
             <from-outcome>cerrar</from-outcome>
@@ -76,21 +73,26 @@
             <to-view-id>/Menu.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
-        <navigation-rule>
-        <from-view-id>/EditarAlumno.xhtml</from-view-id>
+     <navigation-rule>
+        <from-view-id>/Editar.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>regresarMenu</from-outcome>
             <to-view-id>/Menu.xhtml</to-view-id>
         </navigation-case>
-        </navigation-rule>
-        
-          <navigation-rule>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/ImprimirCarnet.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>regresarMenu</from-outcome>
             <to-view-id>/Menu.xhtml</to-view-id>
         </navigation-case>
-        </navigation-rule>
+    </navigation-rule>
+     <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>administrador</from-outcome>
+            <to-view-id>/Menu.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
  
 </faces-config>

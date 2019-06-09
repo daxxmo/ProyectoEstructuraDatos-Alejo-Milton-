@@ -1,14 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./Template/Template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="content">
     <h:head>
         <title>SICUVG</title>
     </h:head>
     <h:body style="text-align: center; background-color: darkcyan; background-image: url(Images/fondo.jpg); background-repeat: no-repeat; background-size: cover;">
-        
+       
         <h:form id="loginForm">
             
             <h:panelGrid columns="2" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 300px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
@@ -27,13 +30,13 @@
             <p:dialog header="Ingresar" widgetVar="dlg" modal="true" resizable="false">
                 <h:panelGrid columns="2" cellpadding="5" style="text-align: left;">
                     <h:outputLabel for="username" value="Usuario:" />
-                    <p:inputText id="username" value="#{indexBean.username}" label="username" />
+                    <p:inputText id="username" value="#{IndexBean.username}" label="username" />
              
                     <h:outputLabel for="password" value="Contraseña:" />
-                    <p:password id="password" value="#{indexBean.password}" label="password" />
+                    <p:password id="password" value="#{IndexBean.password}" label="password" />
              
                 <f:facet name="footer">
-                    <p:commandButton value="Ingresar" update="growl" action="#{indexBean.login()}"/>
+                    <p:commandButton value="Ingresar" update="growl" action="#{IndexBean.login()}"/>
                 </f:facet>  
                 </h:panelGrid>
             </p:dialog>
@@ -41,26 +44,28 @@
             <p:dialog header="Registrar" widgetVar="dlg2" modal="true" resizable="false">
                 <h:panelGrid columns="2" cellpadding="5" style="text-align: left;">
                     <h:outputLabel for="carneReg" value="Usuario:" />
-                    <p:inputText id="carneReg" value="#{indexBean.carneReg}" label="carneReg" />
+                    <p:inputText id="carneReg" value="#{IndexBean.carneReg}" label="carneReg" />
                     
                     <h:outputLabel for="nombreReg" value="Nombre:" />
-                    <p:inputText id="nombreReg" value="#{indexBean.nombreReg}" label="nombreReg" />
+                    <p:inputText id="nombreReg" value="#{IndexBean.nombreReg}" label="nombreReg" />
                     
                     <h:outputLabel for="apellidoReg" value="Apellido:" />
-                    <p:inputText id="apellidoReg" value="#{indexBean.apellidoReg}" label="apellidoReg" />
+                    <p:inputText id="apellidoReg" value="#{IndexBean.apellidoReg}" label="apellidoReg" />
              
                     <h:outputLabel for="passwordReg" value="Contraseña:" />
-                    <p:password id="passwordReg" value="#{indexBean.passwordReg}" label="passwordReg" />
+                    <p:password id="passwordReg" value="#{IndexBean.passwordReg}" label="passwordReg" />
                     
                     <h:outputLabel for="correoReg" value="Correo:" />
-                    <p:inputText id="correoReg" value="#{indexBean.correoReg}" label="correoReg" />
+                    <p:inputText id="correoReg" value="#{IndexBean.correoReg}" label="correoReg" />
              
                 <f:facet name="footer">
-                    <p:commandButton value="Registrar" update="growl" action="#{indexBean.validarUsuario()}"/>
+                    <p:commandButton value="Registrar" update="growl" action="#{IndexBean.validarUsuario()}"/>
                 </f:facet>  
                 </h:panelGrid>
             </p:dialog>
         </h:form>
-    </h:body>
-</html>
+    </h:body> 
+ </ui:define>
+
+        </ui:composition>
 
