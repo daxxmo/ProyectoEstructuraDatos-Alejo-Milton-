@@ -5,6 +5,11 @@
  */
 package bean;
 
+import dbAction.ActualizarAlumnoDbAction;
+import dbAction.RegistroAlumnoDbAction;
+import java.text.ParseException;
+import utils.Mensajes;
+
 /**
  *
  * @author m!lton
@@ -33,7 +38,9 @@ class Alumno {
     Alumno() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+  public String regresarMenu(){
+        return "regresarMenu";
+    }
     public String getCarnet() {
         return carnet;
     }
@@ -97,6 +104,53 @@ class Alumno {
     public void setEstado(Integer estado) {
         this.estado = estado;
     }
+      public void validarAlumno() throws ParseException{
+        String resultado = "";
+        if(this.getCarnet().equals("") || this.getNombre().equals("")){
+            Mensajes.errorMessage("Advertencia", "Los campos con * son obligatorios");
+        }
+        else{
+            carnet = this.getCarnet();
+            nombre = this.getNombre();
+            apellido = this.getApellido();
+            carrera = this.getCarrera();
+            año = this.getAño();
+            ciclo = this.getCiclo();
+            foto = this.getFoto();
+            RegistroAlumnoDbAction registro = new RegistroAlumnoDbAction();
+            resultado = registro.registrarAlumno(carnet, nombre, apellido, carrera, año, ciclo, foto);
+            if(resultado.equals("exito")){
+          
+            }
+        }
+    }
+      
+          public void consultarAlumno(){
 
+        if(this.getCarnet().equals("")){
+            Mensajes.errorMessage("Advertencia", "Debe ingresar el codigo del docente");
+        }
+        else{
+            String carnet = this.getCarnet();
+            ActualizarAlumnoDbAction consulta = new ActualizarAlumnoDbAction();
+            docente = consulta.consultarDocente(carnet);
+            if(docente != null){
+                this.setNombre(docente.getNombre());
+                this.setApellido(docente.getApellido());
+                this.setDpi(docente.getDpi());
+                this.setTelefono(docente.getTelefono());
+                this.setCorreo(docente.getCorreo());
+                this.setDireccion(docente.getDireccion());
+                this.setFechaNacimiento(docente.getFechaNacimiento());
+                this.setIdStatus(docente.getIdStatus());
+
+            }
+            else{
+                Mensajes.errorMessage("Error", "Docente no encontrado");
+            }
+        }
+    }
+
+    
     
 }
