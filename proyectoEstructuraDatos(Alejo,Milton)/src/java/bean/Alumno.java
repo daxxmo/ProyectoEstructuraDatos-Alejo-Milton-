@@ -125,32 +125,6 @@ class Alumno {
         }
     }
       
-          public void consultarAlumno(){
-
-        if(this.getCarnet().equals("")){
-            Mensajes.errorMessage("Advertencia", "Debe ingresar el codigo del docente");
-        }
-        else{
-            String carnet = this.getCarnet();
-            ActualizarAlumnoDbAction consulta = new ActualizarAlumnoDbAction();
-            docente = consulta.consultarDocente(carnet);
-            if(docente != null){
-                this.setNombre(docente.getNombre());
-                this.setApellido(docente.getApellido());
-                this.setDpi(docente.getDpi());
-                this.setTelefono(docente.getTelefono());
-                this.setCorreo(docente.getCorreo());
-                this.setDireccion(docente.getDireccion());
-                this.setFechaNacimiento(docente.getFechaNacimiento());
-                this.setIdStatus(docente.getIdStatus());
-
-            }
-            else{
-                Mensajes.errorMessage("Error", "Docente no encontrado");
-            }
-        }
-    }
-
-    
+     
     
 }
