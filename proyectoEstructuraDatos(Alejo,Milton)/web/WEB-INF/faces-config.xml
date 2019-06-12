@@ -19,9 +19,9 @@
      <managed-bean>
         <description>EditarAlumno</description>
         <managed-bean-name>EditarAlumnoBean</managed-bean-name>
-        <managed-bean-class>bean.EditarAlumnoBean</managed-bean-class>
-        <managed-bean-scope>view</managed-bean-scope>
-    </managed-bean>
+        <managed-bean-class>bean.Alumno</managed-bean-class>
+    
+        <managed-bean-scope>view</managed-bean-scope></managed-bean>
     <managed-bean>
         <description>ImprimirCarnet</description>
         <managed-bean-name>ImprmirCarnetBean</managed-bean-name>

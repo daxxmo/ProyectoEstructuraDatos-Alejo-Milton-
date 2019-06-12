@@ -5,6 +5,11 @@
  */
 package bean;
 
+import dbAction.ActualizarAlumnoDbAction;
+import dbAction.RegistroAlumnoDbAction;
+import java.text.ParseException;
+import utils.Mensajes;
+
 /**
  *
  * @author m!lton
@@ -33,7 +38,9 @@ class Alumno {
     Alumno() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+  public String regresarMenu(){
+        return "regresarMenu";
+    }
     public String getCarnet() {
         return carnet;
     }
@@ -97,6 +104,27 @@ class Alumno {
     public void setEstado(Integer estado) {
         this.estado = estado;
     }
-
+      public void validarAlumno() throws ParseException{
+        String resultado = "";
+        if(this.getCarnet().equals("") || this.getNombre().equals("")){
+            Mensajes.errorMessage("Advertencia", "Los campos con * son obligatorios");
+        }
+        else{
+            carnet = this.getCarnet();
+            nombre = this.getNombre();
+            apellido = this.getApellido();
+            carrera = this.getCarrera();
+            año = this.getAño();
+            ciclo = this.getCiclo();
+            foto = this.getFoto();
+            RegistroAlumnoDbAction registro = new RegistroAlumnoDbAction();
+            resultado = registro.registrarAlumno(carnet, nombre, apellido, carrera, año, ciclo, foto);
+            if(resultado.equals("exito")){
+          
+            }
+        }
+    }
+      
+     
     
 }

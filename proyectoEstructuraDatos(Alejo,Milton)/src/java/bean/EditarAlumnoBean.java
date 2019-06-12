@@ -5,14 +5,31 @@
  */
 package bean;
 
+import dbAction.ActualizarAlumnoDbAction;
+import dbAction.RegistroAlumnoDbAction;
+import java.text.ParseException;
+import utils.Mensajes;
+
 /**
  *
  * @author m!lton
  */
-class ActualizarAlumnoDbAction {
+class EditarAlumnoBean {
 
-    Alumno consultarAlumno(int carnet) {
+
+
+    EditarAlumnoBean() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+  public String regresarMenu(){
+        return "regresarMenu";
+    }
+  
+      
+          public void consultarAlumno(){
+
+          }
+
+    
     
 }
