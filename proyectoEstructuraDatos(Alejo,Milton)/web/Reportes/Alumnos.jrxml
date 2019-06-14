@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ea15f934-aa14-42a6-b917-97e5c07ac132">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="590" pageHeight="800" columnWidth="590" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ea15f934-aa14-42a6-b917-97e5c07ac132">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -27,9 +27,15 @@ FROM alumno;]]>
 				<imageExpression><![CDATA["LogoUVGCampusSur.JPG"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement style="Title" x="0" y="13" width="333" height="33" uuid="ec112e81-dc77-4ac8-891d-b6b1b358ceb4"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement style="Title" x="0" y="13" width="51" height="12" uuid="ec112e81-dc77-4ac8-891d-b6b1b358ceb4"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
 				<text><![CDATA[REPORTE DE ALUMNOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="51" width="59" height="14" uuid="fa9f8434-a732-4b1e-a63b-b5f9d55e7057"/>
+				<text><![CDATA[CARNET]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -39,33 +45,29 @@ FROM alumno;]]>
 	<columnHeader>
 		<band height="36" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="d02de7e8-3774-4721-9773-4bb187c11cff"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="522" height="1" uuid="d02de7e8-3774-4721-9773-4bb187c11cff"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement style="Column header" x="0" y="19" width="33" height="15" uuid="a441a9f3-528c-48c0-bff7-302ef0c72df9"/>
+				<reportElement style="Column header" x="0" y="19" width="0" height="14" uuid="a441a9f3-528c-48c0-bff7-302ef0c72df9"/>
 				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="35" y="19" width="92" height="15" uuid="fa9f8434-a732-4b1e-a63b-b5f9d55e7057"/>
-				<text><![CDATA[CARNET]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="Column header" x="127" y="19" width="149" height="15" uuid="1de2ec4c-4f04-4a75-93d2-072d0380028b"/>
+				<reportElement style="Column header" x="127" y="19" width="116" height="14" uuid="1de2ec4c-4f04-4a75-93d2-072d0380028b"/>
 				<text><![CDATA[ALUMNO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="276" y="19" width="190" height="15" uuid="a3feca60-416b-4e1c-9710-f32439b0e6f8"/>
+				<reportElement style="Column header" x="276" y="19" width="157" height="14" uuid="a3feca60-416b-4e1c-9710-f32439b0e6f8"/>
 				<text><![CDATA[CARRERA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="466" y="19" width="43" height="15" uuid="819c9eed-24f1-4637-9e00-24ce0a76b379"/>
+				<reportElement style="Column header" x="466" y="19" width="10" height="14" uuid="819c9eed-24f1-4637-9e00-24ce0a76b379"/>
 				<text><![CDATA[AÑO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="513" y="19" width="39" height="15" uuid="b5a9cc33-c730-4f42-9899-a41f1a8e2971"/>
+				<reportElement style="Column header" x="513" y="19" width="6" height="14" uuid="b5a9cc33-c730-4f42-9899-a41f1a8e2971"/>
 				<text><![CDATA[CICLO]]></text>
 			</staticText>
 		</band>
@@ -73,33 +75,33 @@ FROM alumno;]]>
 	<detail>
 		<band height="16" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="eed2216f-a426-4b3f-ba36-636dacac8c1c"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="522" height="1" uuid="eed2216f-a426-4b3f-ba36-636dacac8c1c"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement style="Detail" x="0" y="0" width="33" height="15" uuid="a0b8c18e-341a-44e1-a992-dcef226fd848"/>
+				<reportElement style="Detail" x="0" y="0" width="0" height="14" uuid="a0b8c18e-341a-44e1-a992-dcef226fd848"/>
 				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Detail" x="35" y="0" width="92" height="15" uuid="490c51eb-087b-41d6-9220-134aaa63c91b"/>
+				<reportElement style="Detail" x="35" y="0" width="59" height="14" uuid="490c51eb-087b-41d6-9220-134aaa63c91b"/>
 				<textFieldExpression><![CDATA[$F{CARNET}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Detail" x="127" y="0" width="149" height="15" uuid="b8c632e0-36a0-4377-8502-ee2d149ac920"/>
+				<reportElement style="Detail" x="127" y="0" width="116" height="14" uuid="b8c632e0-36a0-4377-8502-ee2d149ac920"/>
 				<textFieldExpression><![CDATA[$F{ALUMNO}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Detail" x="276" y="0" width="190" height="15" uuid="07178448-1ae2-4e16-a1e6-32a94a5a1bf0"/>
+				<reportElement style="Detail" x="276" y="0" width="157" height="14" uuid="07178448-1ae2-4e16-a1e6-32a94a5a1bf0"/>
 				<textFieldExpression><![CDATA[$F{CARRERA}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Detail" x="466" y="0" width="43" height="15" uuid="dfe549a9-c9a3-4e51-a3b0-645176921da5"/>
+				<reportElement style="Detail" x="466" y="0" width="10" height="14" uuid="dfe549a9-c9a3-4e51-a3b0-645176921da5"/>
 				<textFieldExpression><![CDATA[$F{AÑO}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="Detail" x="513" y="0" width="39" height="15" uuid="ad095e47-a450-4a04-9ac7-69fa8f86e9f7"/>
+				<reportElement style="Detail" x="513" y="0" width="6" height="14" uuid="ad095e47-a450-4a04-9ac7-69fa8f86e9f7"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{CICLO}]]></textFieldExpression>
 			</textField>
@@ -108,7 +110,7 @@ FROM alumno;]]>
 	<columnFooter>
 		<band height="45" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="0cf186e5-6158-4ea3-911e-692968fdf408"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="522" height="1" uuid="0cf186e5-6158-4ea3-911e-692968fdf408"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
@@ -116,29 +118,7 @@ FROM alumno;]]>
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="20" splitType="Stretch">
-			<textField>
-				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="07c8f71d-28a8-4a49-8ce2-35dc83942271"/>
-				<textElement textAlignment="Right">
-					<font size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report">
-				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="86c5a061-a154-471e-bafc-fabae9482f56"/>
-				<textElement>
-					<font size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
-			</textField>
-			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="22ce078c-5150-41c5-b488-4a6087416ba7"/>
-				<textElement>
-					<font size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="20" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
 		<band splitType="Stretch"/>
