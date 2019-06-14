@@ -11,7 +11,10 @@ import java.text.ParseException;
 import java.util.Date;
 import dbAction.RegistroAlumnoDbAction;
 import java.io.File;
+import java.io.Serializable;
 import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Map;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +25,7 @@ import utils.Conexion;
  *
  * @author m!lton
  */
-public class ImprimirCarnetBean {
+public class ImprimirCarnetBean  {
     private String carnet;
     private String nombre;
     private String apellido;
@@ -100,32 +103,14 @@ public class ImprimirCarnetBean {
         this.estado = estado;
     }
     
-      public void validarAlumno() throws ParseException{
-        String resultado = "";
-        if(this.getCarnet().equals("") || this.getNombre().equals("")){
-            Mensajes.errorMessage("Advertencia", "Los campos con * son obligatorios");
-        }
-        else{
-            carnet = this.getCarnet();
-            nombre = this.getNombre();
-            apellido = this.getApellido();
-            carrera = this.getCarrera();
-            año = this.getAño();
-            ciclo = this.getCiclo();
-            foto = this.getFoto();
-            RegistroAlumnoDbAction registro = new RegistroAlumnoDbAction();
-            resultado = registro.registrarAlumno(carnet, nombre, apellido, carrera, año, ciclo, foto);
-            if(resultado.equals("exito")){
-                limpiarCampos();
-            }
-        }
-    }
+
       
         public void consultarAlumno(){
 
     } 
               public void imprimirCarnet() {
- 
+ Map parameter = new HashMap();
+ parameter.put("CARNET", carnet);
  
  try {
   // Llamamos al metodo para obtener la conexion
@@ -134,15 +119,16 @@ public class ImprimirCarnetBean {
             conect = conexion.connect();
  
   // Revisar si esta es la dirección donde esta tu reporte .jasper
+  
   File file = new File(
     "C:\\Users\\m!lton\\Documents\\NetBeansProjects\\proyectoEstructuraDatos\\ProyectoEstructuraDatos-Alejo-Milton-\\proyectoEstructuraDatos(Alejo,Milton)\\web\\Reportes\\carnet.jasper");
  
-  byte[] documento = JasperRunManager.runReportToPdf(file.getPath(),
-    null, conect);
+  byte[] documento = JasperRunManager.runReportToPdf(file.getPath(), 
+    parameter, conect);
    
   String fileType = "inline";
   String reportSetting = fileType + "; filename=\""
-    + "reporteAlumnos.pdf\"";
+    + "carnet.pdf\"";
    
   HttpServletResponse httpServletResponse = (HttpServletResponse) FacesContext
     .getCurrentInstance().getExternalContext().getResponse();
@@ -174,6 +160,9 @@ public class ImprimirCarnetBean {
         this.setAño("");
         this.setCiclo("");
         this.setFoto("");
+    }
+    public void mostrar(){
+        System.out.println(carnet);
     }
     
 }
