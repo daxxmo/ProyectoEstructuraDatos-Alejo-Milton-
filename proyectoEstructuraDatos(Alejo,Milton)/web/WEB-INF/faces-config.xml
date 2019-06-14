@@ -19,7 +19,7 @@
      <managed-bean>
         <description>EditarAlumno</description>
         <managed-bean-name>EditarAlumnoBean</managed-bean-name>
-        <managed-bean-class>bean.Alumno</managed-bean-class>
+        <managed-bean-class>bean.EditarAlumnoBean</managed-bean-class>
     
         <managed-bean-scope>view</managed-bean-scope></managed-bean>
     <managed-bean>
@@ -73,13 +73,15 @@
             <to-view-id>/Menu.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-     <navigation-rule>
-        <from-view-id>/Editar.xhtml</from-view-id>
+    
+    <navigation-rule>
+        <from-view-id>/EditarAlumno.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>regresarMenu</from-outcome>
             <to-view-id>/Menu.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
     <navigation-rule>
         <from-view-id>/ImprimirCarnet.xhtml</from-view-id>
         <navigation-case>

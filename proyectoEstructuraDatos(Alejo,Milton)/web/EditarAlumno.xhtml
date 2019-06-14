@@ -18,22 +18,27 @@
                 <p:menuitem title="Volver al menu" icon="/Images/home.ico" action="#{EditarAlumnoBean.regresarMenu()}"/>
             </p:dock>
             <br/>
+            <table align="center" cellspacing="10" style="font-size: smaller">
+                <td align="left">    
             <h1>Actualizar Alumnos</h1>
             <p:graphicImage url="Images/alumno.png" style="width: 200px; height: 150px"/>
+            </td>
+            </table>
             <table align="center" cellspacing="10" style="font-size: smaller">
                 <tr>
                     <td align="left">
-                        <p:outputLabel value="Carnet *"/>
-                        p:commandButton title="Buscar" icon="ui-icon-search" action="#{EditarAlumnoBean.consultarAlumno()}" update="EditarAlumnoForm"/>
+                        <p:outputLabel style="width: 150px"  value="Carnet *"/>
+                        
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 150px" value="#{EditarAlumnoBean.carnet}"/>
+                        <p:inputText style="width: 150px" />
+                        <p:commandButton value="Buscar" title="buscar al alumno" icon="ui-icon-disk"  update="EditarAlumnoForm"/>
                     </td>
                     <td align="left">
                         <p:outputLabel value="Año "/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 150px" value="#{EditarAlumnoBean.año}"/>
+                        <p:inputText style="width: 150px" />
                     </td>
                 </tr>
                 <tr>
@@ -41,13 +46,13 @@
                         <p:outputLabel value="Nombres *"/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 300px" value="#{EditarAlumnoBean.nombre}"/>
+                        <p:inputText style="width: 300px" />
                     </td>
                     <td align="left">
                         <p:outputLabel value="Apellidos"/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 300px" value="#{EditarAlumnoBean.apellido}"/>
+                        <p:inputText style="width: 300px" />
                     </td>
                 </tr>
                 <tr>
@@ -55,7 +60,7 @@
                         <p:outputLabel value="Carrera"/>
                     </td>
                     <td align="left">
-                        <p:selectOneMenu id="console" value="#{EditarAlumnoBean.carrera}" style="width:300px">
+                        <p:selectOneMenu id="carrera"  style="width:300px">
                         <f:selectItem itemLabel="Seleccione una" itemValue="" />
                         <f:selectItem itemLabel="Licenciatura en Administracion de Empresas" itemValue="Licenciatura en Administracion de Empresas" />
                         <f:selectItem itemLabel="Licenciatura en Informatica" itemValue="Licenciatura en Informatica" />
@@ -66,13 +71,13 @@
                         <p:outputLabel value="Ciclo"/>
                     </td>
                     <td align="left">
-                        <p:inputText style="width: 150px" value="#{EditarAlumnoBean.ciclo}"/>
+                        <p:inputText style="width: 150px" />
                     </td>
                 </tr>
   
                 <tr>
                     <td colspan="4">
-                        <p:commandButton value="Actualizar" title="Registra al alumno" icon="ui-icon-disk" action="#{EditarAlumnoBean.validarAlumno()}" update="EditarAlumnoForm"/>
+                        <p:commandButton value="Actualizar" title="Registra al alumno" icon="ui-icon-disk"  update="EditarAlumnoForm"/>
                     </td>
                 </tr>
             </table>
