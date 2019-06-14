@@ -1,47 +1,42 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                template="./Template/Template.xhtml"
-                xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:p="http://primefaces.org/ui"
-                xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <ui:define name="content">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>SICUVG</title>
-    </h:head>
-    <h:body style="text-align: center; background-color: darkcyan; background-image: url(Images/fondo.jpg); background-repeat: no-repeat; background-size: cover;">
-       
-        <h:form id="loginForm">
-            
-            <h:panelGrid columns="2" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 300px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                <h:outputLink onclick="PF('dlg').show();" title="login">
-                    <p:commandButton value="Ingresar" style="font-size: 30px; margin: 0 0 0 7px;" />
-                </h:outputLink>
-                
-            <h:outputLink onclick="PF('dlg2').show();" title="registrar">
-                    <p:commandButton value="Registrar" style="font-size: 30px; margin: 0 0 0 7px;" />
-            </h:outputLink>                
-                
-            </h:panelGrid>
-            
-            <p:growl id="growl" showDetail="true" sticky="true" life="2000"/>
+        <meta charset="UTF-8"/>
+        <title>Login</title>
 
-            <p:dialog header="Ingresar" widgetVar="dlg" modal="true" resizable="false">
-                <h:panelGrid columns="2" cellpadding="5" style="text-align: left;">
-                    <h:outputLabel for="username" value="Usuario:" />
-                    <p:inputText id="username" value="#{IndexBean.username}" label="username" />
-             
-                    <h:outputLabel for="password" value="Contraseña:" />
-                    <p:password id="password" value="#{IndexBean.password}" label="password" />
-             
-                <f:facet name="footer">
-                    <p:commandButton value="Ingresar" update="growl" action="#{IndexBean.login()}"/>
-                </f:facet>  
-                </h:panelGrid>
-            </p:dialog>
-            
-            <p:dialog header="Registrar" widgetVar="dlg2" modal="true" resizable="false">
+        <link rel='stylesheet' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'/>
+        <link rel="stylesheet" href="./CSS/style.css"/>
+
+    </h:head>
+    <h:body style="background-size: cover; background-repeat: no-repeat;">
+        <h:form id="loginForm">
+
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'/>
+        
+        
+        <div class="login">
+            <div class="login-header">
+                <h1>Login</h1>
+            </div>
+            <p:growl id="growl" showDetail="true" sticky="true" life="2000">
+                <p:panel class="login-form">
+                <h3>Usuario:</h3>
+                <p:inputText id="username"  value="#{IndexBean.username}" label="username"/>
+                <br/>
+                <h3>Contraseña:</h3>
+                <p:password id="password" value="#{IndexBean.password}" label="password"/>
+                <br/>
+                <p:commandButton value="Ingresar" update="@form" action="#{IndexBean.login()}"/>
+                <p:commandButton value="Registrarse" onclick="PF('dlg2').show()"/>
+                </p:panel>
+                </p:growl>
+        </div>
+        
+        <p:dialog id="Registrar" header="Registrar" widgetVar="dlg2" modal="true" resizable="false">
                 <h:panelGrid columns="2" cellpadding="5" style="text-align: left;">
                     <h:outputLabel for="carneReg" value="Usuario:" />
                     <p:inputText id="carneReg" value="#{IndexBean.carneReg}" label="carneReg" />
@@ -59,13 +54,13 @@
                     <p:inputText id="correoReg" value="#{IndexBean.correoReg}" label="correoReg" />
              
                 <f:facet name="footer">
-                    <p:commandButton value="Registrar" update="growl" action="#{IndexBean.validarUsuario()}"/>
+                    <p:commandButton value="Registrar" update="@form" action="#{IndexBean.validarUsuario()}"/>
                 </f:facet>  
                 </h:panelGrid>
             </p:dialog>
+        
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
         </h:form>
-    </h:body> 
- </ui:define>
-
-        </ui:composition>
-
+    </h:body>
+</html>
