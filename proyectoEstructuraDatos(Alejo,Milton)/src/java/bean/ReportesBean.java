@@ -139,5 +139,44 @@ public class ReportesBean {
   e.printStackTrace();
  }
 } 
+         public void ReporteSolicitudes() {
  
+ try {
+  // Llamamos al metodo para obtener la conexion
+  Connection conect;
+            Conexion conexion = new Conexion();
+            conect = conexion.connect();
+ 
+  // Revisar si esta es la dirección donde esta tu reporte .jasper
+  File file = new File(
+    "C:\\Users\\m!lton\\Documents\\NetBeansProjects\\proyectoEstructuraDatos\\ProyectoEstructuraDatos-Alejo-Milton-\\proyectoEstructuraDatos(Alejo,Milton)\\web\\Reportes\\Solicitudes.jasper");
+ 
+  byte[] documento = JasperRunManager.runReportToPdf(file.getPath(),
+    null, conect);
+   
+  String fileType = "inline";
+  String reportSetting = fileType + "; filename=\""
+    + "reporteSolicitudes.pdf\"";
+   
+  HttpServletResponse httpServletResponse = (HttpServletResponse) FacesContext
+    .getCurrentInstance().getExternalContext().getResponse();
+  httpServletResponse.setContentType("application/pdf");
+  httpServletResponse.setHeader("Content-Disposition",
+    "inline; flename=\reporteSolicitudes.pdf\"");
+  httpServletResponse.setHeader("Cache-Control", "private");
+  httpServletResponse.setContentLength(documento.length);
+ 
+  ServletOutputStream servletOutputStream = httpServletResponse
+    .getOutputStream();
+  servletOutputStream.write(documento, 0, documento.length);
+  servletOutputStream.flush();
+  servletOutputStream.close();
+ 
+  conect.close();
+   
+  FacesContext.getCurrentInstance().responseComplete();
+ } catch (Exception e) {
+  e.printStackTrace();
+ }
+} 
 }

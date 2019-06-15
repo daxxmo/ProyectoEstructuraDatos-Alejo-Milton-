@@ -26,14 +26,14 @@
             <tr>
                 
                     <td align="left">
-                        <p:outputLabel value="Carnet"/>
+                        <p:outputLabel value="Carnet *"/>
                     </td>
                     <td align="left">
                         <p:inputText style="width: 300px" value="#{SolicitarCarnetBean.carnet}"/>
                     </td>
                 <tr>
                     <td colspan="4">
-                        <p:commandButton value="Solicitar" title="Solicita carnet" icon="ui-icon-disk" action="#{SolicitarCarnetBean.imprimirCarnet()}" update="SolicitarCarnetForm"/>
+                        <p:commandButton value="Solicitar" title="Solicita carnet" icon="ui-icon-disk" action="#{SolicitarCarnetBean.validarCarnet()}" update="SolicitarCarnetForm"/>
                     </td>
                 </tr>
 

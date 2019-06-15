@@ -25,7 +25,7 @@ import utils.Conexion;
  *
  * @author m!lton
  */
-public class ImprimirCarnetBean  {
+public class ImprimirCarnetBean implements Serializable  {
     private String carnet;
     private String nombre;
     private String apellido;

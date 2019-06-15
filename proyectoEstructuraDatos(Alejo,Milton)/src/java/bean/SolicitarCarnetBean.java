@@ -6,6 +6,7 @@
 package bean;
 
 
+
 import utils.Mensajes;
 import java.text.ParseException;
 import java.util.Date;
@@ -20,6 +21,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import net.sf.jasperreports.engine.JasperRunManager;
 import utils.Conexion;
+import dbAction.RegistroSolicitudDbAction;
 
 /**
  *
@@ -103,66 +105,28 @@ public class SolicitarCarnetBean  {
         this.estado = estado;
     }
     
-
+   public void validarCarnet() throws ParseException{
+        String resultado = "";
+        if(this.getCarnet().equals("")){
+            Mensajes.errorMessage("Advertencia", "Los campos con * son obligatorios");
+        }
+        else{
+            carnet = this.getCarnet();
+            RegistroSolicitudDbAction registro = new RegistroSolicitudDbAction();
+            resultado = registro.registrarSolicitud(carnet);
+            if(resultado.equals("exito")){
+                limpiarCampos();
+            }
+        }
+    }
       
-        public void consultarAlumno(){
+ 
 
-    } 
-              public void imprimirCarnet() {
- Map parameter = new HashMap();
- parameter.put("CARNET", carnet);
- 
- try {
-  // Llamamos al metodo para obtener la conexion
-  Connection conect;
-            Conexion conexion = new Conexion();
-            conect = conexion.connect();
- 
-  // Revisar si esta es la dirección donde esta tu reporte .jasper
-  
-  File file = new File(
-    "C:\\Users\\m!lton\\Documents\\NetBeansProjects\\proyectoEstructuraDatos\\ProyectoEstructuraDatos-Alejo-Milton-\\proyectoEstructuraDatos(Alejo,Milton)\\web\\Reportes\\carnet.jasper");
- 
-  byte[] documento = JasperRunManager.runReportToPdf(file.getPath(), 
-    parameter, conect);
-   
-  String fileType = "inline";
-  String reportSetting = fileType + "; filename=\""
-    + "carnet.pdf\"";
-   
-  HttpServletResponse httpServletResponse = (HttpServletResponse) FacesContext
-    .getCurrentInstance().getExternalContext().getResponse();
-  httpServletResponse.setContentType("application/pdf");
-  httpServletResponse.setHeader("Content-Disposition",
-    "inline; flename=\reporteAlumnos.pdf\"");
-  httpServletResponse.setHeader("Cache-Control", "private");
-  httpServletResponse.setContentLength(documento.length);
- 
-  ServletOutputStream servletOutputStream = httpServletResponse
-    .getOutputStream();
-  servletOutputStream.write(documento, 0, documento.length);
-  servletOutputStream.flush();
-  servletOutputStream.close();
- 
-  conect.close();
-   
-  FacesContext.getCurrentInstance().responseComplete();
- } catch (Exception e) {
-  e.printStackTrace();
- }
-}
 
     private void limpiarCampos() {
         this.setCarnet("");
-        this.setNombre("");
-        this.setApellido("");
-        this.setCarrera("");
-        this.setAño("");
-        this.setCiclo("");
-        this.setFoto("");
+
     }
-    public void mostrar(){
-        System.out.println(carnet);
-    }
+   
     
 }
