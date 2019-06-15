@@ -10,12 +10,21 @@
         <managed-bean-class>bean.ReportesBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+    
  <managed-bean>
         <description>NuevoAlumno</description>
         <managed-bean-name>NuevoAlumnoBean</managed-bean-name>
         <managed-bean-class>bean.NuevoAlumnoBean</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
+    
+    <managed-bean>
+        <description>SolicitarCarnet</description>
+        <managed-bean-name>SolicitarCarnetBean</managed-bean-name>
+        <managed-bean-class>bean.SolicitarCarnetBean</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    
      <managed-bean>
         <description>EditarAlumno</description>
         <managed-bean-name>EditarAlumnoBean</managed-bean-name>
@@ -33,6 +42,13 @@
         <managed-bean-name>IndexBean</managed-bean-name>
         <managed-bean-class>bean.IndexBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+     <managed-bean>
+        <description>Navegacion2</description>
+        <managed-bean-name>menuAlumnoBean</managed-bean-name>
+        <managed-bean-class>bean.MenuAlumnoBean</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
 
     <managed-bean>
@@ -53,6 +69,26 @@
             <to-view-id>EditarAlumno.xhtml</to-view-id>
         </navigation-case>
          <navigation-case>
+            <from-outcome>ImprimirCarnet</from-outcome>
+            <to-view-id>ImprimirCarnet.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>AlumnosCarrera</from-outcome>
+            <to-view-id>AlumnosCarrera.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>cerrar</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+   <navigation-rule>
+        <from-view-id>MenuAlumno.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>SolicitarCarnet</from-outcome>
+            <to-view-id>SolicitarCarnet.xhtml</to-view-id>
+        </navigation-case>
+             <navigation-case>
             <from-outcome>ImprimirCarnet</from-outcome>
             <to-view-id>ImprimirCarnet.xhtml</to-view-id>
         </navigation-case>
@@ -94,6 +130,22 @@
         <navigation-case>
             <from-outcome>administrador</from-outcome>
             <to-view-id>/Menu.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+      <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>alumno</from-outcome>
+            <to-view-id>/MenuAlumno.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+   
+     <navigation-rule>
+        <from-view-id>/SolicitarCarnet.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>regresarMenu</from-outcome>
+            <to-view-id>/MenuAlumno.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
  

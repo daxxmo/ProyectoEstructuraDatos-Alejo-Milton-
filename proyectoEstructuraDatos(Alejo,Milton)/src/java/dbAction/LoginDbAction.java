@@ -59,7 +59,7 @@ public class LoginDbAction {
                         resultado = "administrador";
                     } //Validamos que sea vendedor y que este activo
                     else if (rolUsuario == 2 && statusUsuario == 1) {
-                        resultado = "docente";
+                        resultado = "alumno";
                     }
                 }
             }
