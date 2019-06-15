@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac873a68-6b0f-4248-bc6a-68add1ec9829">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     alumno.`carnet_alumno` AS CARNET,
+     CONCAT(alumno.`nombre_alumno`,' ',
+     alumno.`apellido_alumno`) AS ALUMNO,
+     alumno.`carrera_alumno` AS CARRERA
+FROM
+     `alumno` alumno
+WHERE
+     id_estado = 1]]>
+	</queryString>
+	<field name="CARNET" class="java.lang.String"/>
+	<field name="ALUMNO" class="java.lang.String"/>
+	<field name="CARRERA" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="433" height="33" uuid="47c2344c-4ef0-49df-ad8e-6cf92e3ed36f"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[REPORTE DE ALUMNOS ACTIVOS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="480" y="0" width="73" height="68" uuid="751e2955-0ae2-45a9-bd9e-dae2a2708788"/>
+				<imageExpression><![CDATA["C:\\Users\\m!lton\\Documents\\NetBeansProjects\\proyectoEstructuraDatos\\ProyectoEstructuraDatos-Alejo-Milton-\\proyectoEstructuraDatos(Alejo,Milton)\\web\\Images\\logo_uvg.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="33933a6d-3ee2-42d7-9b2d-1f7b7cc88d04"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="78" height="15" uuid="1eb0e382-e61c-4d89-9971-48274abec31c"/>
+				<text><![CDATA[CARNET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="78" y="19" width="220" height="15" uuid="6c816130-1e92-4539-83c3-8172c82f3afb"/>
+				<text><![CDATA[ALUMNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="298" y="19" width="257" height="15" uuid="9aa6ca89-3650-475e-a40b-361631a52c21"/>
+				<text><![CDATA[CARRERA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="19839c1d-e078-46db-acab-9322e9bd920a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="78" height="15" uuid="cdabdfe8-c0f6-43ec-a615-2c4bb332e157"/>
+				<textFieldExpression><![CDATA[$F{CARNET}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="78" y="0" width="220" height="15" uuid="dc637599-d53f-4750-93aa-5f78db39a12b"/>
+				<textFieldExpression><![CDATA[$F{ALUMNO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="298" y="0" width="257" height="15" uuid="74c709ce-a7ba-4ef1-bc6d-03958c120a16"/>
+				<textFieldExpression><![CDATA[$F{CARRERA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="39e67b2a-2338-46cb-8be3-874823088d64"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="73886f10-ddf3-47e3-8fe4-dac66956d86b"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="d0d2d659-8841-4e5e-846d-1a1b6ebaf482"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="cce08438-9759-414f-95b2-2883c02ada4a"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

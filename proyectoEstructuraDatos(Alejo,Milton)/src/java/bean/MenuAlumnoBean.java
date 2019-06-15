@@ -82,8 +82,8 @@ public class MenuAlumnoBean {
         return "EditarAlumno";
     }
     
-     public String ImprimirCarnet(){
-        return "ImprimirCarnet";
+     public String SolicitarCarnet(){
+        return "SolicitarCarnet";
     }
       public String AlumnosCarrera(){
         return "AlumnosCarrera";
